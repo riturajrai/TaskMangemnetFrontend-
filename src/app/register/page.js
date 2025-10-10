@@ -228,12 +228,12 @@ function Signup() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-slate-100 text-slate-900 font-[Inter] text-[12px] flex items-center justify-center p-4 sm:p-6 antialiased">
-      <div className="absolute -top-32 -left-32 w-64 h-64 rounded-full bg-gradient-to-r from-indigo-400 to-purple-400 opacity-20 blur-3xl z-0" />
-      <div className="absolute bottom-8 right-8 w-80 h-80 rounded-full bg-gradient-to-r from-purple-300 to-indigo-300 opacity-20 blur-3xl z-0" />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-sky-50 to-slate-100 text-slate-900 font-[Inter] text-[12px] flex items-center justify-center p-4 sm:p-6 antialiased">
+      <div className="absolute -top-32 -left-32 w-64 h-64 rounded-full bg-gradient-to-r from-sky-400 to-blue-400 opacity-20 blur-3xl z-0" />
+      <div className="absolute bottom-8 right-8 w-80 h-80 rounded-full bg-gradient-to-r from-blue-300 to-sky-300 opacity-20 blur-3xl z-0" />
       <Toaster position="bottom-right" />
       <div className="relative z-10 w-full max-w-5xl bg-white rounded-lg shadow-md border border-slate-100 overflow-hidden flex flex-col lg:flex-row">
-        <div className="lg:flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 p-6 sm:p-8 flex items-center justify-center">
+        <div className="lg:flex-1 bg-gradient-to-r from-sky-600 to-blue-600 p-6 sm:p-8 flex items-center justify-center">
           <div className="text-center w-full">
             <div className="w-full max-w-xs mx-auto sm:max-w-sm">
               <div className="bg-slate-200 h-48 sm:h-64 rounded-md flex items-center justify-center">
@@ -241,7 +241,7 @@ function Signup() {
               </div>
             </div>
             <h2 className="text-[14px] font-bold text-white mt-4">Join TaskFlow!</h2>
-            <p className="text-[12px] text-indigo-100 mt-2">Create an account to streamline your workflows and boost productivity.</p>
+            <p className="text-[12px] text-sky-100 mt-2">Create an account to streamline your workflows and boost productivity.</p>
           </div>
         </div>
         <div className="flex-1 p-6 sm:p-8">
@@ -274,7 +274,7 @@ function Signup() {
                     onChange={(e) => setName(e.target.value)}
                     className={`w-full pl-9 pr-3 py-2 text-[12px] rounded-md border ${
                       errors.name ? 'border-red-500' : 'border-slate-200'
-                    } bg-white focus:ring-2 focus:ring-indigo-500`}
+                    } bg-white focus:ring-2 focus:ring-sky-500`}
                     placeholder="Enter your name"
                     disabled={loading}
                     required
@@ -297,7 +297,7 @@ function Signup() {
                     onChange={(e) => setEmail(e.target.value)}
                     className={`w-full pl-9 pr-3 py-2 text-[12px] rounded-md border ${
                       errors.email ? 'border-red-500' : 'border-slate-200'
-                    } bg-white focus:ring-2 focus:ring-indigo-500`}
+                    } bg-white focus:ring-2 focus:ring-sky-500`}
                     placeholder="Enter your email"
                     ref={emailInputRef}
                     disabled={loading}
@@ -321,7 +321,7 @@ function Signup() {
                     onChange={(e) => setPassword(e.target.value)}
                     className={`w-full pl-9 pr-9 py-2 text-[12px] rounded-md border ${
                       errors.password ? 'border-red-500' : 'border-slate-200'
-                    } bg-white focus:ring-2 focus:ring-indigo-500`}
+                    } bg-white focus:ring-2 focus:ring-sky-500`}
                     placeholder="••••••••"
                     disabled={loading}
                     required
@@ -329,7 +329,7 @@ function Signup() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-500 hover:text-indigo-600"
+                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-500 hover:text-sky-600"
                   >
                     {showPassword ? (
                       <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -360,7 +360,7 @@ function Signup() {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     className={`w-full pl-9 pr-9 py-2 text-[12px] rounded-md border ${
                       errors.confirmPassword ? 'border-red-500' : 'border-slate-200'
-                    } bg-white focus:ring-2 focus:ring-indigo-500`}
+                    } bg-white focus:ring-2 focus:ring-sky-500`}
                     placeholder="••••••••"
                     disabled={loading}
                     required
@@ -371,16 +371,16 @@ function Signup() {
                 )}
               </div>
               <div className="flex items-center">
-                <input id="terms" type="checkbox" className="h-4 w-4 text-indigo-600 border-slate-200 rounded" required />
+                <input id="terms" type="checkbox" className="h-4 w-4 text-sky-600 border-slate-200 rounded" required />
                 <label htmlFor="terms" className="ml-2 block text-[12px] text-slate-700">
-                  I agree to the <a href="/terms" className="text-indigo-600 hover:underline">Terms and Conditions</a>
+                  I agree to the <a href="/terms" className="text-sky-600 hover:underline">Terms and Conditions</a>
                 </label>
               </div>
               <button
                 type="submit"
                 disabled={loading}
                 className={`w-full py-2 px-4 rounded-lg text-[12px] font-semibold text-white ${
-                  loading ? 'bg-indigo-400 cursor-not-allowed' : 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700'
+                  loading ? 'bg-sky-400 cursor-not-allowed' : 'bg-gradient-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-blue-600'
                 }`}
               >
                 {loading ? 'Signing up...' : 'Sign Up'}
@@ -401,7 +401,7 @@ function Signup() {
                     onChange={(e) => setOTP(e.target.value)}
                     className={`w-full pl-9 pr-3 py-2 text-[12px] rounded-md border ${
                       errors.otp ? 'border-red-500' : 'border-slate-200'
-                    } bg-white focus:ring-2 focus:ring-indigo-500`}
+                    } bg-white focus:ring-2 focus:ring-sky-500`}
                     placeholder="Enter 6-digit OTP"
                     ref={otpInputRef}
                     disabled={loading}
@@ -416,7 +416,7 @@ function Signup() {
                 type="submit"
                 disabled={loading}
                 className={`w-full py-2 px-4 rounded-lg text-[12px] font-semibold text-white ${
-                  loading ? 'bg-indigo-400 cursor-not-allowed' : 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700'
+                  loading ? 'bg-sky-400 cursor-not-allowed' : 'bg-gradient-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-blue-600'
                 }`}
               >
                 {loading ? 'Verifying...' : 'Verify OTP'}
@@ -424,14 +424,14 @@ function Signup() {
               <div className="text-center space-x-4">
                 <button
                   onClick={() => setShowOTPForm(false)}
-                  className="text-[12px] text-indigo-600 hover:underline"
+                  className="text-[12px] text-sky-600 hover:underline"
                   disabled={loading}
                 >
                   Back to Signup
                 </button>
                 <button
                   onClick={handleResendOTP}
-                  className="text-[12px] text-indigo-600 hover:underline"
+                  className="text-[12px] text-sky-600 hover:underline"
                   disabled={loading}
                 >
                   Resend OTP
@@ -442,7 +442,7 @@ function Signup() {
           <div className="mt-4 text-center">
             <p className="text-[12px] text-slate-600">
               Already have an account?{' '}
-              <button onClick={() => router.push('/login')} className="font-semibold text-indigo-600 hover:underline">
+              <button onClick={() => router.push('/login')} className="font-semibold text-sky-600 hover:underline">
                 Sign in
               </button>
             </p>
