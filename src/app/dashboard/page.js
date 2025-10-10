@@ -244,7 +244,7 @@ export default function Dashboard() {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-600"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-sky-500"></div>
       </div>
     );
   }
@@ -273,7 +273,7 @@ export default function Dashboard() {
           {/* Stats Overview */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
             {[
-              { icon: FileText, label: 'Total Tasks', value: stats.totalTasks, color: 'indigo' },
+              { icon: FileText, label: 'Total Tasks', value: stats.totalTasks, color: 'sky' },
               { icon: CheckCircle, label: 'Completed', value: stats.completedTasks, color: 'green' },
               { icon: Clock, label: 'Pending', value: stats.pendingTasks, color: 'yellow' },
               { icon: AlertCircle, label: 'Overdue', value: stats.overdueTasks, color: 'red' }
@@ -302,7 +302,7 @@ export default function Dashboard() {
                     onClick={() => setActiveTab(tab)}
                     className={`py-4 px-4 sm:px-6 text-sm font-medium border-b-2 transition-colors ${
                       activeTab === tab
-                        ? 'border-indigo-600 text-indigo-600'
+                        ? 'border-sky-500 text-sky-500'
                         : 'border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300'
                     }`}
                     aria-current={activeTab === tab ? 'page' : undefined}
@@ -320,7 +320,7 @@ export default function Dashboard() {
                     <h2 className="text-lg font-medium text-gray-900 mb-4 sm:mb-0">Recent Tasks</h2>
                     <button 
                       onClick={handleAddTask}
-                      className="flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                      className="flex items-center px-4 py-2 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors"
                       aria-label="Add new task"
                     >
                       <Plus className="h-4 w-4 mr-2" />
@@ -388,7 +388,7 @@ export default function Dashboard() {
                               <div className="flex justify-end space-x-2">
                                 <button 
                                   onClick={() => handleEditTask(task)}
-                                  className="text-indigo-600 hover:text-indigo-900"
+                                  className="text-sky-500 hover:text-sky-700"
                                   aria-label={`Edit task ${task.title}`}
                                 >
                                   <Edit className="h-4 w-4" />
@@ -431,7 +431,7 @@ export default function Dashboard() {
                           placeholder="Search tasks..." 
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
-                          className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 w-full sm:w-64"
+                          className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 w-full sm:w-64"
                           aria-label="Search tasks"
                         />
                       </div>
@@ -447,7 +447,7 @@ export default function Dashboard() {
                             <select
                               value={filter.priority}
                               onChange={(e) => setFilter({ ...filter, priority: e.target.value })}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-sky-500 focus:border-sky-500"
                             >
                               <option value="all">All Priorities</option>
                               <option value="low">Low</option>
@@ -460,7 +460,7 @@ export default function Dashboard() {
                             <select
                               value={filter.status}
                               onChange={(e) => setFilter({ ...filter, status: e.target.value })}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-sky-500 focus:border-sky-500"
                             >
                               <option value="all">All Statuses</option>
                               <option value="pending">Pending</option>
@@ -478,7 +478,7 @@ export default function Dashboard() {
                       </div>
                       <button 
                         onClick={handleAddTask}
-                        className="flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                        className="flex items-center px-4 py-2 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors"
                         aria-label="Add new task"
                       >
                         <Plus className="h-4 w-4 mr-2" />
@@ -544,7 +544,7 @@ export default function Dashboard() {
                                     {task.status !== 'completed' && (
                                       <button 
                                         onClick={() => handleTaskAction(task.id, 'complete')}
-                                        className="text-xs text-indigo-600 hover:text-indigo-800 font-medium flex items-center"
+                                        className="text-xs text-sky-500 hover:text-sky-700 font-medium flex items-center"
                                         aria-label={`Complete task ${task.title}`}
                                       >
                                         <CheckCircle className="h-3 w-3 mr-1" />
@@ -580,7 +580,7 @@ export default function Dashboard() {
                   <FileText className="h-12 w-12 text-gray-400 mx-auto mb-4 opacity-50" />
                   <h3 className="text-lg font-medium text-gray-900 mb-2">Team Management</h3>
                   <p className="text-gray-600 mb-6">Manage your team members, assign tasks, and track progress.</p>
-                  <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                  <button className="px-4 py-2 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors">
                     Invite Team Members
                   </button>
                 </div>
@@ -591,9 +591,9 @@ export default function Dashboard() {
                   <h3 className="text-lg font-medium text-gray-900 mb-2 text-center">Task Analytics</h3>
                   <p className="text-gray-600 text-center mb-8">Visualize your task completion rates, team performance, and productivity trends.</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
-                    <div className="bg-indigo-50 p-6 rounded-lg shadow-sm border border-indigo-100">
-                      <h4 className="font-medium text-indigo-900 mb-2">Completion Rate</h4>
-                      <div className="text-2xl sm:text-3xl font-bold text-indigo-700">
+                    <div className="bg-sky-50 p-6 rounded-lg shadow-sm border border-sky-100">
+                      <h4 className="font-medium text-sky-900 mb-2">Completion Rate</h4>
+                      <div className="text-2xl sm:text-3xl font-bold text-sky-700">
                         {stats.totalTasks > 0 ? Math.round((stats.completedTasks / stats.totalTasks) * 100) : 0}%
                       </div>
                     </div>
@@ -638,7 +638,7 @@ export default function Dashboard() {
                         type="text"
                         value={newTask.title}
                         onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
                         placeholder="Enter task title"
                         required
                         aria-required="true"
@@ -652,7 +652,7 @@ export default function Dashboard() {
                         id="task-description"
                         value={newTask.description}
                         onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
                         placeholder="Enter task description"
                         rows="3"
                       />
@@ -665,7 +665,7 @@ export default function Dashboard() {
                         id="priority"
                         value={newTask.priority}
                         onChange={(e) => setNewTask({ ...newTask, priority: e.target.value })}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
                         required
                         aria-required="true"
                       >
@@ -683,7 +683,7 @@ export default function Dashboard() {
                         type="date"
                         value={newTask.dueDate}
                         onChange={(e) => setNewTask({ ...newTask, dueDate: e.target.value })}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
                         required
                         aria-required="true"
                       />
@@ -697,7 +697,7 @@ export default function Dashboard() {
                         type="text"
                         value={newTask.assignee}
                         onChange={(e) => setNewTask({ ...newTask, assignee: e.target.value })}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
                         placeholder="Enter assignee name"
                         required
                         aria-required="true"
@@ -712,7 +712,7 @@ export default function Dashboard() {
                           id="status"
                           value={newTask.status}
                           onChange={(e) => setNewTask({ ...newTask, status: e.target.value })}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
                         >
                           <option value="pending">Pending</option>
                           <option value="in progress">In Progress</option>
@@ -732,7 +732,7 @@ export default function Dashboard() {
                     </button>
                     <button
                       type="submit"
-                      className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                      className="px-4 py-2 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors"
                       aria-label={modalMode === 'add' ? 'Add task' : 'Update task'}
                     >
                       {modalMode === 'add' ? 'Add Task' : 'Update Task'}
