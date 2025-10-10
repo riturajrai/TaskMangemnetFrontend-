@@ -1,4 +1,4 @@
 [build]
   base = "task-frontend"
   command = "npm install && npm run build"
-  publish = "task-frontend/.next"
+  publish = ".next"
