@@ -109,7 +109,7 @@ function Login() {
       await handleLogin(email, password);
       setIsLoggedIn(true);
       toast.success('Logged in successfully!', {
-        icon: <CheckCircle className="h-4 w-4 text-indigo-600" />,
+        icon: <CheckCircle className="h-4 w-4 text-sky-600" />,
         style: { background: '#ffffff', color: '#1e293b', padding: '12px', borderRadius: '8px' },
       });
     } catch (err) {
@@ -143,7 +143,7 @@ function Login() {
     try {
       await handleForgotPasswordRequest(forgotEmail);
       toast.success('Verification code sent to your email!', {
-        icon: <CheckCircle className="h-4 w-4 text-indigo-600" />,
+        icon: <CheckCircle className="h-4 w-4 text-sky-600" />,
         style: { background: '#ffffff', color: '#1e293b', padding: '12px', borderRadius: '8px' },
       });
       setTimeout(() => {
@@ -164,10 +164,10 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-slate-100 text-slate-900 font-[Inter] text-[14px] flex items-center justify-center p-4 sm:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-sky-50 to-slate-100 text-slate-900 font-[Inter] text-[14px] flex items-center justify-center p-4 sm:p-6">
       <Toaster position="bottom-right" />
       <div className="w-full max-w-5xl bg-white rounded-lg shadow-md border border-slate-100 overflow-hidden flex flex-col lg:flex-row">
-        <div className="lg:flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 p-6 sm:p-8 flex items-center justify-center">
+        <div className="lg:flex-1 bg-gradient-to-r from-sky-600 to-blue-600 p-6 sm:p-8 flex items-center justify-center">
           <div className="text-center w-full">
             <div className="w-full max-w-xs mx-auto sm:max-w-sm">
               <div className="bg-slate-200 h-48 sm:h-64 rounded-md flex items-center justify-center">
@@ -175,7 +175,7 @@ function Login() {
               </div>
             </div>
             <h2 className="text-[16px] font-bold text-white mt-4">Welcome Back!</h2>
-            <p className="text-[14px] text-indigo-100 mt-2">Sign in to access your personalized dashboard and features.</p>
+            <p className="text-[14px] text-sky-100 mt-2">Sign in to access your personalized dashboard and features.</p>
           </div>
         </div>
         <div className="flex-1 p-6 sm:p-8">
@@ -203,7 +203,7 @@ function Login() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value.trim())}
-                  className="w-full pl-9 pr-3 py-2 text-[14px] rounded-md border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500"
+                  className="w-full pl-9 pr-3 py-2 text-[14px] rounded-md border border-slate-200 bg-white focus:ring-2 focus:ring-sky-500"
                   placeholder="Enter your email"
                   ref={emailInputRef}
                   disabled={loading}
@@ -217,7 +217,7 @@ function Login() {
                 <button
                   type="button"
                   onClick={() => setIsForgotPasswordOpen(true)}
-                  className="text-[14px] text-indigo-600 hover:underline"
+                  className="text-[14px] text-sky-600 hover:underline"
                 >
                   Forgot password?
                 </button>
@@ -231,7 +231,7 @@ function Login() {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-9 pr-9 py-2 text-[14px] rounded-md border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500"
+                  className="w-full pl-9 pr-9 py-2 text-[14px] rounded-md border border-slate-200 bg-white focus:ring-2 focus:ring-sky-500"
                   placeholder="••••••••"
                   disabled={loading}
                   required
@@ -239,21 +239,21 @@ function Login() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-500 hover:text-indigo-600"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-500 hover:text-sky-600"
                 >
                   {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
               </div>
             </div>
             <div className="flex items-center">
-              <input id="remember-me" type="checkbox" className="h-4 w-4 text-indigo-600 border-slate-200 rounded" />
+              <input id="remember-me" type="checkbox" className="h-4 w-4 text-sky-600 border-slate-200 rounded" />
               <label htmlFor="remember-me" className="ml-2 block text-[14px] text-slate-700">Remember me</label>
             </div>
             <button
               type="submit"
               disabled={loading}
               className={`w-full py-2 px-4 rounded-lg text-[14px] font-semibold text-white ${
-                loading ? 'bg-indigo-400 cursor-not-allowed' : 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700'
+                loading ? 'bg-sky-400 cursor-not-allowed' : 'bg-gradient-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-blue-600'
               }`}
             >
               {loading ? 'Signing in...' : 'Sign In'}
@@ -262,7 +262,7 @@ function Login() {
           <div className="mt-4 text-center">
             <p className="text-[14px] text-slate-600">
               Don&apos;t have an account?{' '}
-              <button onClick={() => router.push('/register')} className="font-semibold text-indigo-600 hover:underline">
+              <button onClick={() => router.push('/register')} className="font-semibold text-sky-600 hover:underline">
                 Create an account
               </button>
             </p>
@@ -275,7 +275,7 @@ function Login() {
                 <h3 className="text-[16px] font-semibold text-slate-900">Reset Password</h3>
                 <button
                   onClick={() => setIsForgotPasswordOpen(false)}
-                  className="p-1 rounded-full text-slate-500 hover:text-indigo-600 hover:bg-slate-100"
+                  className="p-1 rounded-full text-slate-500 hover:text-sky-600 hover:bg-slate-100"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -297,7 +297,7 @@ function Login() {
                     type="email"
                     value={forgotEmail}
                     onChange={(e) => setForgotEmail(e.target.value.trim())}
-                    className="w-full px-3 py-2 text-[14px] rounded-md border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500"
+                    className="w-full px-3 py-2 text-[14px] rounded-md border border-slate-200 bg-white focus:ring-2 focus:ring-sky-500"
                     placeholder="Enter your email"
                     ref={forgotEmailInputRef}
                     disabled={loading}
@@ -316,7 +316,7 @@ function Login() {
                     type="submit"
                     disabled={loading}
                     className={`flex-1 py-2 px-4 rounded-lg text-[14px] font-semibold text-white ${
-                      loading ? 'bg-indigo-400 cursor-not-allowed' : 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700'
+                      loading ? 'bg-sky-400 cursor-not-allowed' : 'bg-gradient-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-blue-600'
                     }`}
                   >
                     {loading ? 'Sending...' : 'Send Code'}
