@@ -1,0 +1,15 @@
+export const menuItems = [
+    { id: 'dashboard', label: 'Dashboard', icon: '📊' },
+    { id: 'onboarding', label: 'Onboarding', icon: '👋' },
+    { id: 'ask', label: 'Ask anything', icon: '💬' },
+    { id: 'explore', label: 'Explore Subjects', icon: '📚' },
+    { id: 'codingtech', label: 'Coding & Technology', icon: '⚡' },
+    { id: 'writingcomm', label: 'Writing & Communication', icon: '⚡' },
+    { id: 'summarize', label: 'Summarizer Note', icon: '📝' },
+    { id: 'flashcards', label: 'Flashcards', icon: '🎴' },
+    { id: 'brain', label: 'Brain Battle', icon: '🧠' },
+    { id: 'adaptive', label: 'Adaptive Learning', icon: '🎯' },
+    { id: 'today', label: "Today's Learning", icon: '📅' },
+    { id: 'podcast', label: 'Podcast', icon: '🎙️' },
+    { id: 'points', label: 'Points', icon: '⭐' },
+  ];

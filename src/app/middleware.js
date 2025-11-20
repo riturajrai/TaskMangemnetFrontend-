@@ -1,41 +1,33 @@
-import { NextResponse } from 'next/server';
+// middleware.js (project root)
+import { NextResponse } from "next/server";
 
-export async function middleware(request) {
-  const { pathname } = request.nextUrl;
+const protectedRoutes = ["/dashboard", "/profile", "/settings"];
+const publicRoutes = ["/login", "/register", "/", "/about"];
 
-  const protectedRoutes = ['/dashboard', '/profile', '/settings', '/notifications'];
-  const publicRoutes = ['/login', '/register', '/reset-password', '/'];
+export default function middleware(req) {
+  const { pathname } = req.nextUrl;
 
-  if (publicRoutes.includes(pathname)) {
-    return NextResponse.next();
+  const isProtected = protectedRoutes.some((route) =>
+    pathname.startsWith(route)
+  );
+  const isPublic = publicRoutes.some((route) => pathname.startsWith(route));
+
+  // Get the httpOnly cookie (server can read it)
+  const userCookie = req.cookies.get("connect.sid") || req.cookies.get("token");
+
+  if (isProtected && !userCookie) {
+    const loginUrl = new URL("/login", req.url);
+    loginUrl.searchParams.set("redirect", pathname);
+    return NextResponse.redirect(loginUrl);
   }
 
-  if (protectedRoutes.some((route) => pathname.startsWith(route))) {
-    try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/auth/protected`, {
-        method: 'GET',
-        headers: {
-          Cookie: request.headers.get('cookie') || '',
-        },
-        credentials: 'include',
-      });
-
-      if (!response.ok) {
-        throw new Error('Unauthorized');
-      }
-
-      return NextResponse.next();
-    } catch (error) {
-      console.error('Middleware authentication failed:', error);
-      const loginUrl = new URL('/login', request.url);
-      loginUrl.searchParams.set('redirect', pathname);
-      return NextResponse.redirect(loginUrl);
-    }
+  if (isPublic && userCookie && (pathname === "/login" || pathname === "/register")) {
+    return NextResponse.redirect(new URL("/dashboard", req.url));
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };
